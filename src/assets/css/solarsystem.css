@@ -1,0 +1,261 @@
+.maindiv {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.proton {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  border-radius: 50%;
+  position: relative;
+}
+
+.electron {
+  position: absolute;
+  animation: rotation 3s infinite linear;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.electron::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  border-radius: 50%;
+
+  margin: 51px;
+}
+.electronOne {
+  position: absolute;
+  animation: rotation 3s infinite linear;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.electronOne::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  border-radius: 50%;
+  margin: 51px;
+}
+.electrontwo {
+  position: absolute;
+  animation: rotation 4s infinite linear;
+  border-radius: 50%;
+  left: 50%;
+
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.electrontwo::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  border-radius: 50%;
+  margin: 51px;
+}
+.electronthree {
+  position: absolute;
+  animation: rotation 4s infinite linear;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.electronthree::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  border-radius: 50%;
+  margin: 51px;
+}
+
+.electronfour {
+  position: absolute;
+  animation: rotation 5s infinite linear;
+  border-radius: 50%;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.electronfour::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  border-radius: 50%;
+  margin: 51px;
+}
+.electronfive {
+  position: absolute;
+  animation: rotation 5s infinite linear;
+  border-radius: 50%;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.electronfive::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  border-radius: 50%;
+  margin: 51px;
+}
+.electronsix {
+  position: absolute;
+  animation: rotation 6s infinite linear;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.electronsix::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: -20px;
+
+  top: -20px;
+  border-radius: 50%;
+  margin: 51px;
+}
+
+.electronseven {
+  position: absolute;
+  animation: rotation 6s infinite linear;
+  border-radius: 50%;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.electronseven::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  border-radius: 50%;
+  margin: 51px;
+}
+.electroneight {
+  position: absolute;
+  animation: rotation 7s infinite linear;
+  border-radius: 50%;
+  left: 50%;
+
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.electroneight::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  border-radius: 50%;
+  margin: 51px;
+}
+.electronnine {
+  position: absolute;
+  animation: rotation 7s infinite linear;
+  border-radius: 50%;
+  left: 50%;
+
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.electronnine::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  border-radius: 50%;
+  margin: 51px;
+}
+.electronten {
+  position: absolute;
+  animation: rotation 8s infinite linear;
+  border-radius: 50%;
+  left: 50%;
+
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.electronten::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  border-radius: 50%;
+  margin: 51px;
+}
+.electroneleven {
+  position: absolute;
+  animation: rotation 8s infinite linear;
+  border-radius: 50%;
+  left: 50%;
+
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.electroneleven::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  border-radius: 50%;
+  margin: 51px;
+}
+@keyframes rotation {
+  0% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}

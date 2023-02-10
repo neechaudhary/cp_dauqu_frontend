@@ -1,0 +1,15 @@
+.inputt{
+    clip-path: polygon(0 0, 99% 0, 93% 100%, 0 100%);
+    border: 1px solid gray;
+    border-radius: 8px;
+
+
+}
+.arrowbtn{
+    clip-path: polygon(15% 0, 99% 0, 100% 100%, 0 100%);
+    border: 1px solid gray;
+    border-radius: 8px;
+
+
+
+}

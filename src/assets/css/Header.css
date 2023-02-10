@@ -1,0 +1,14 @@
+.mainheader {
+  /* clip-path: polygon(0 0, 100% 0, 100% 76%, 63% 100%, 36% 100%, 0 79%); */
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 86% 100%, 15% 100%, 0 89%);
+
+
+
+  /* height: 100vh; */
+}
+@media (max-width: 768px) {
+  .mainheader {
+    clip-path: circle(70.4% at 49% 30%);
+    /* height: 110vh; */
+  }
+}
