@@ -1,391 +1,350 @@
-import axios from "axios";
-import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
-import loginplease from "../assets/images/loginPlease.jpg";
-import SecondHeader from "./SecondHeader";
-import { AiFillHome, AiFillSetting, AiTwotoneSetting } from "react-icons/ai";
-import { FaKey, FaUserAlt } from "react-icons/fa";
-import { motion } from "framer-motion";
-import { Link, useParams } from "react-router-dom";
-import { API } from "./Constant";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import SubscibedPlan from "./SubscibedPlan";
-import CircularProgress from "@mui/material/CircularProgress";
-
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import userimg from "../assets/images/be.png"
+import trustimg from "../assets/images/trust.png"
+import SecondHeader from './SecondHeader'
+import SubscibedPlan from './SubscibedPlan'
 import {VscAccount} from "react-icons/vsc"
-import {SlSettings} from "react-icons/sl"
+import {FiSettings} from "react-icons/fi"
 import {RiLockPasswordLine} from "react-icons/ri"
-// import { BsFillPatchCheckFill } from "react-icons/bs";
-function Profile() {
-  const [showModal, setShowModal] = useState(false); // modal for password update
-  const [userSettingModal, setUserSettingModal] = useState(false); // modal for user Account setting
-  const [toastify_psw, setToastify_psw] = useState(false); // toastify for password update success
-  const [toastify_psw_err, setToastify_psw_err] = useState(false); // toastify for password update error
-  const [toastify_user, setToastify_user] = useState(false); // toastify for user account setting success
-  const [toastify_user_err, setToastify_user_err] = useState(false); // toastify for user account setting error
-  const [user, setUser] = useState("");
-  const [old_password, setOld_password] = useState("");
-  const [new_password, setNew_password] = useState("");
-  const [confirm_password, setConfirm_password] = useState("");
+import {MdOutlineLogout} from "react-icons/md"
 
-  const [name, setName] = useState("");
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [address, setAddress] = useState("");
-  const [country, setCountry] = useState("");
+import { API } from "./Constant";
 
-  // for success toastify password update
-  const notify_psw = () => {
-    toast.success("Password Updated Successfully", {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
-  };
+import { ToastContainer, toast } from "react-toastify";
 
-  // for error toastify password update
-  const notify_psw_err = () => {
-    toast.error("Password Update Error", {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
-  };
 
-  // for success toastify user account setting
-  const notify_user = () => {
-    toast.success("Settings Updated", {
-      position: "top-right",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
-  };
-  // for error toastify user account setting error
-  const notify_user_err = () => {
-    toast.error("Settings Update Error", {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
-  };
-  // scrool to top function
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-  useEffect(() => {
-    scrollToTop();
-  }, []);
 
-  // getting data of user profile from profile api
-  // console.log(setUser.length);
-  async function GetUsers() {
-    try {
-      const response = await axios.get(`${API}/profile`, {
-        withCredentials: true,
+const New_profile = () => {
+    const [showModal, setShowModal] = useState(false); // modal for password update
+    const [userSettingModal, setUserSettingModal] = useState(false); // modal for user Account setting
+    const [toastify_psw, setToastify_psw] = useState(false); // toastify for password update success
+    const [toastify_psw_err, setToastify_psw_err] = useState(false); // toastify for password update error
+    const [toastify_user, setToastify_user] = useState(false); // toastify for user account setting success
+    const [toastify_user_err, setToastify_user_err] = useState(false); // toastify for user account setting error
+    const [user, setUser] = useState("");
+    const [old_password, setOld_password] = useState("");
+    const [new_password, setNew_password] = useState("");
+    const [confirm_password, setConfirm_password] = useState("");
+  
+    const [name, setName] = useState("");
+    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [address, setAddress] = useState("");
+    const [country, setCountry] = useState("");
+  
+    // for success toastify password update
+    const notify_psw = () => {
+      toast.success("Password Updated Successfully", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
       });
-      setUser(response.data.data);
-      console.log(response.data.data);
-    } catch (error) {
-      // console.log(error);
-    }
-  }
-  React.useEffect(() => {
-    GetUsers();
-  }, []);
-  //   logout function
-  async function UserLogut() {
-    try {
-      const resp = await axios.get(`${API}/logout`, {
-        withCredentials: true,
+    };
+  
+    // for error toastify password update
+    const notify_psw_err = () => {
+      toast.error("Password Update Error", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
       });
-      // console.log(resp.data);
-      // console.log("logout done");
-      window.location.href = "/";
-    } catch (error) {
-      console.log(error);
+    };
+  
+    // for success toastify user account setting
+    const notify_user = () => {
+      toast.success("Settings Updated", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    };
+    // for error toastify user account setting error
+    const notify_user_err = () => {
+      toast.error("Settings Update Error", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    };
+    // scrool to top function
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    };
+    useEffect(() => {
+      scrollToTop();
+    }, []);
+  
+    // getting data of user profile from profile api
+    // console.log(setUser.length);
+    async function GetUsers() {
+      try {
+        const response = await axios.get(`${API}/profile`, {
+          withCredentials: true,
+        });
+        setUser(response.data.data);
+        console.log(response.data.data);
+      } catch (error) {
+        // console.log(error);
+      }
     }
-  }
-  // password update function
-
-  const _id = user._id;
-  // console.log(_id);
-
-  const handlePasswordUpdate = async () => {
-    try {
+    React.useEffect(() => {
+      GetUsers();
+    }, []);
+    //   logout function
+    async function UserLogut() {
+      try {
+        const resp = await axios.get(`${API}/logout`, {
+          withCredentials: true,
+        });
+        // console.log(resp.data);
+        // console.log("logout done");
+        window.location.href = "/";
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    // password update function
+  
+    const _id = user._id;
+    // console.log(_id);
+  
+    const handlePasswordUpdate = async () => {
+      try {
+        await axios
+          .patch(`${API}/getuser/update/password/${_id}`, {
+            old_password: old_password,
+            new_password: new_password,
+            confirm_password: confirm_password,
+          })
+          .then((res) => {
+            // console.log(res.data);
+            setToastify_psw(true);
+            notify_psw();
+            // window.location.href = "/profile";
+          })
+          .catch((err) => {
+            // console.log(err);
+            setToastify_psw_err(true);
+            notify_psw_err();
+          });
+      } catch (error) {
+        // console.log(error);
+      }
+    };
+  
+    // code to get user by id
+    const getUserById = async () => {
+      if (user._id === undefined) return;
       await axios
-        .patch(`${API}/getuser/update/password/${_id}`, {
-          old_password: old_password,
-          new_password: new_password,
-          confirm_password: confirm_password,
+        .get(`${API}/getuser/${user._id}`)
+        .then((res) => {
+          let info = res.data;
+  
+          setName(info.name);
+          setUsername(info.username);
+          setEmail(info.email);
+          setPhone(info.phone);
+          setAddress(info.address);
+          setCountry(info.country);
+        })
+        .catch((err) => {
+          setTimeout(() => {
+            console.log(err);
+          }, [5000]);
+        });
+    };
+    useEffect(() => {
+      getUserById();
+    }, [user._id]);
+  
+    // code to update user
+    const handleUserUpdate = async (e) => {
+      e.preventDefault();
+  
+      axios
+        .patch(`${API}/getuser/update/user/${user._id}`, {
+          name,
+          username,
+          email,
+          phone,
+          address,
+          country,
         })
         .then((res) => {
           // console.log(res.data);
-          setToastify_psw(true);
-          notify_psw();
-          // window.location.href = "/profile";
+          // window.alert("user updated successfully");
+          setToastify_user(true);
+          notify_user();
+          setTimeout(() => {
+            window.location.href = "/profile";
+          }, [2000]);
         })
         .catch((err) => {
-          // console.log(err);
-          setToastify_psw_err(true);
-          notify_psw_err();
-        });
-    } catch (error) {
-      // console.log(error);
-    }
-  };
-
-  // code to get user by id
-  const getUserById = async () => {
-    if (user._id === undefined) return;
-    await axios
-      .get(`${API}/getuser/${user._id}`)
-      .then((res) => {
-        let info = res.data;
-
-        setName(info.name);
-        setUsername(info.username);
-        setEmail(info.email);
-        setPhone(info.phone);
-        setAddress(info.address);
-        setCountry(info.country);
-      })
-      .catch((err) => {
-        setTimeout(() => {
           console.log(err);
-        }, [5000]);
-      });
-  };
-  useEffect(() => {
-    getUserById();
-  }, [user._id]);
+          setToastify_user_err(true);
+          notify_user_err();
+          // window.alert("user not updated");
+        });
+    };
+    return (
+        <>
+        <div>
+            <SecondHeader />
 
-  // code to update user
-  const handleUserUpdate = async (e) => {
-    e.preventDefault();
+            
+             <section className='pt-16'>
+                <div className='lg:w-full lg:min-h-[100vh] sm:flex' >
+                    <div className='bg-[#f0f0f0]'>
+                        <div className='p-4  flex flex-col'>
+                            <div className='shrink-0 w-full min-w-[200px]'>
+                                <img src={user.image} alt="userprofile" 
+                                    className='rounded-full m-auto w-[200px] h-[200px]' />
+                            </div>
+                            <div>
+                                <div className='text-xl font-semibold flex justify-center'>
+                                {user.name}
+                                </div>
+                            </div>
+                        </div>
 
-    axios
-      .patch(`${API}/getuser/update/user/${user._id}`, {
-        name,
-        username,
-        email,
-        phone,
-        address,
-        country,
-      })
-      .then((res) => {
-        // console.log(res.data);
-        // window.alert("user updated successfully");
-        setToastify_user(true);
-        notify_user();
-        setTimeout(() => {
-          window.location.href = "/profile";
-        }, [2000]);
-      })
-      .catch((err) => {
-        console.log(err);
-        setToastify_user_err(true);
-        notify_user_err();
-        // window.alert("user not updated");
-      });
-  };
-
-  return (
-    <div>
-      {/* header */}
-      <SecondHeader />
-      {/* main content  */}
-      {user.length !== 0 ? (
-        <motion.div
-          initial={{ y: -10, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: -10, opacity: 0 }}
-          transition={{ duration: 0.7, stiffness: 500 }}
-          style={{
-            width: "100%",
-            height: "100%",
-          }}
-        >
-          <section className="pt-16    ">
-            <div className=" bg-[#ffffff]  md:h-[100vh] h-full   w-full p-4 sm:p-0  m-auto sm:flex   ">
-              <div className="border-0 flex flex-col  w-1/1 min-w-[200px]  lg:w-[260px]  ">
-                <div className="p-4 text-left ">
-                  <div className="w-[150px] m-auto ">
-                    <img
-                      src={user.image}
-                      className="rounded-full w-full h-[150px] object-cover"
-                      alt=""
-                      srcset=""
-                    />
-                  </div>
-                  <div className="flex justify-center items-center">
-                    <div className="text-[22px] flex   font-semibold mt-2 text-center">
-                      {user.name}
+                        <div className='pt-3'>
+                            <ul className="menu bg-base-100 lg:w-full rounded-none flex flex-row justify-evenly sm:block">
+                                <li onClick={() =>setUserSettingModal(!userSettingModal)}>
+                                    <a>
+                                        <VscAccount size={18} />
+                                        Account
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <FiSettings size={18}/>
+                                        Setting
+                                    </a>
+                                </li>
+                                <li onClick={() => setShowModal(!showModal)}>
+                                    <a>
+                                       <RiLockPasswordLine size={18}/>
+                                        Password
+                                    </a>
+                                </li>
+                                <li onClick={() =>UserLogut()}>
+                                    <a>
+                                    <MdOutlineLogout size={18}/>
+                                        Logout
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                  </div>
+                    {/* ==========sidebar end========== */}
+
+                    {/* =============profile information start============ */}
+                    <div className='p-6 sm:p-10 w-full  '>
+                        <div className='p-3 px-6  bg-gradient-to-b from-[#A5C5EE] to-white rounded-md'>
+                            <div className='flex justify-start items-center w-full'>
+                                <div className='lg:w-[110px] lg-h-[110px] w-full h-[100px] w-[100px] shrink-0 mr-2'>
+                                    <img src={trustimg} alt=""
+                                        className='rounded-full mr-2 w-full object-cover' />
+                                </div>
+                                <div>
+                                    <h1 className='text-xl sm:text-3xl font-bold'>Personal Information</h1>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* =========input fields start==== */}
+                        <div className=' md:flex lg:flex'>
+                            <div className='mt-4 w-full px-4'>
+                                <div className='font-semibold'>
+                                    Uniquekey
+                                </div>
+                                <div>
+                                    <input type="text" value={user.uniqueKey} className="input input-bordered w-full  border-[#5CA2D6]  rounded max-w-xl focus:outline-none  sm:p-3 md:h-[36px]" readOnly />
+                                </div>
+                            </div>
+                            <div className='mt-4 w-full px-4'>
+                                <div className='font-semibold'>
+                                    Username
+                                </div>
+                                <div>
+                                    <input type="text" value={user.username} className="input input-bordered w-full  border-[#5CA2D6]  rounded max-w-xl focus:outline-none sm:p-3 md:h-[36px]" readOnly />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='md:flex lg:flex'>
+                            <div className='mt-4 w-full px-4'>
+                                <div className='font-semibold'>
+                                    Email
+                                </div>
+                                <div>
+                                    <input type="text" value={user.email} className="input input-bordered w-full  border-[#5CA2D6]  rounded max-w-xl focus:outline-none sm:p-3 md:h-[36px]" readOnly />
+                                </div>
+                            </div>
+                            <div className='mt-4 w-full px-4'>
+                                <div className='font-semibold'>
+                                    Phone
+                                </div>
+                                <div>
+                                    <input type="text" value={user.phone} className="input input-bordered w-full  border-[#5CA2D6]  rounded max-w-xl focus:outline-none sm:p-3 md:h-[36px]" readOnly/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='md:flex lg:flex'>
+                            <div className='mt-4 w-full px-4'>
+                                <div className='font-semibold'>
+                                    Country
+                                </div>
+                                <div>
+                                    <input type="text" value={user.country} className="input input-bordered w-full  border-[#5CA2D6]  rounded max-w-xl focus:outline-none sm:p-3 md:h-[36px]" readOnly/>
+                                </div>
+                            </div>
+                            <div className='mt-4 w-full px-4'>
+                                <div className='font-semibold'>
+                                    Address
+                                </div>
+                                <div>
+                                    <input type="text" value={user.address} className="input input-bordered w-full border-[#5CA2D6]  rounded max-w-xl focus:outline-none sm:p-3 md:h-[36px]" readOnly/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <SubscibedPlan />
+                        </div>
+
+
+                    </div>
+
                 </div>
-                <div className="mt-6 sm:block flex   ">
-                  <div className="">
-                    <button className="border-0 rounded-none w-full text-center text-[#342B3D] flex items-center   hover:bg-[#165461] justify-left hover:text-[white]  pt-2 pb-2 pl-4 pr-4 ">
-                      <div className="w-[30px]">
-                        {/* <AiFillHome /> */}
-                        <VscAccount size={20} />
-                      </div>
-                      <div className="">Account</div>
-                    </button>
-                  </div>
-                  <div className="">
-                    <button
-                      className="border-0 rounded-none w-full text-center text-[#342B3D] flex items-center   hover:bg-[#165461] justify-left hover:text-[white] pt-2 pb-2 pl-4 pr-4  "
-                      onClick={() => setUserSettingModal(!userSettingModal)}
-                    >
-                      <div className="w-[30px]">
-                        {/* <AiFillSetting size={18} /> */}
-                        <SlSettings size={20}/>
-                      </div>
-                      <div className=""> Settings</div>
-                    </button>
-                  </div>
-                  <div className="">
-                    <button
-                      className="border-0 rounded-none w-full text-center text-[#342B3D] flex items-center   hover:bg-[#165461] justify-left hover:text-[white] pt-2 pb-2 pl-4 pr-4 "
-                      onClick={() => setShowModal(!showModal)}
-                    >
-                      <div className="w-[30px]">
-                        {/* <FaKey /> */}
-                        <RiLockPasswordLine size={20} />
-                      </div>
-                      <div className="">Password</div>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="border w-full sm:p-12 md:p-8 p-2">
-                <div className="flex items-center justify-between ">
-                  <div className="text-[25px] text-[#342B3D] font-bold">
-                    Account
-                  </div>
-                  <div className="">
-                    <button
-                      className="px-[10px]  py-[3px] w-full bg-[#165461] text-[white] rounded font-semibold"
-                      onClick={() => UserLogut()}
-                    >
-                      Logout
-                    </button>
-                  </div>
-                </div>
-                <div className="md:flex w-full  mt-2">
-                  <div className="mt-4  w-full md:w-1/2 m-2">
-                    <div className="text-[17px] text-[#342B3D] font-semibold">
-                      UniqueKey{" "}
-                    </div>
-                    <div className="mt-2 px-[5px]">
-                      {/* <div className="rounded-none  w-full border p-2">
-                        {user.uniqueKey}
-                      </div> */}
-                      <input type="text" value={user.uniqueKey} className="input input-bordered w-full bg-[#F0F2FF] rounded-none max-w-xl focus:outline-none"  />
-                    </div>
-                  </div>
-                  <div className="mt-4 w-full  md:w-1/2  m-2">
-                    <div className="text-[17px]  text-[#342B3D] font-semibold">
-                      Username
-                    </div>
-                    <div className="mt-2 px-[5px] ">
-                      {/* <div className="rounded-none  w-full border p-2">
-                        {user.username}
-                      </div> */}
-                      <input type="text" value={user.username} className="input input-bordered w-full max-w-xl bg-[#F0F2FF] rounded-none focus:outline-none" />
-                    </div>
-                  </div>
-                </div>
-                <div className="md:flex w-full  mt-2">
-                  <div className="mt-4  w-full md:w-1/2 m-2">
-                    <div className="text-[17px] text-[#342B3D] font-semibold">
-                      Email
-                    </div>
-                    <div className="mt-2 px-[5px]">
-                      {/* <div className="rounded-none  w-full border p-2">
-                        {user.email}
-                      </div> */}
-                      <input type="text" value={user.email} className="input input-bordered w-full max-w-xl bg-[#F0F2FF] rounded-none focus:outline-none" />
 
-                    </div>
-                  </div>
-                  <div className="mt-4 w-full  md:w-1/2  m-2">
-                    <div className="text-[17px]  text-[#342B3D] font-semibold">
-                      Phone
-                    </div>
-                    <div className="mt-2 px-[5px]">
-                      {/* <div className="rounded-none  w-full border p-2">
-                        {user.phone}
-                      </div> */}
-                    <input type="text" value={user.phone} className="input input-bordered w-full max-w-xl bg-[#F0F2FF] rounded-none focus:outline-none" />
-
-                    </div>
-                  </div>
-                </div>
-                <div className="md:flex w-full  mt-2">
-                  <div className="mt-4  w-full md:w-1/2 m-2">
-                    <div className="text-[17px] text-[#342B3D] font-semibold">
-                      Country
-                    </div>
-                    <div className="mt-2 px-[5px]">
-                      {/* <div className="rounded-none  w-full border p-2">
-                        {user.country}
-                      </div> */}
-                    <input type="text" value={user.country} className="input input-bordered w-full max-w-xl bg-[#F0F2FF] rounded-none focus:outline-none" />
-
-                    </div>
-                  </div>
-                  <div className="mt-4 w-full  md:w-1/2  m-2">
-                    <div className="text-[17px]  text-[#342B3D] font-semibold">
-                      Address
-                    </div>
-                    <div className="mt-2 px-[5px]">
-                      {/* <div className="rounded-none  w-full border p-2">
-                        {user.address}
-                      </div> */}
-                      <input type="text" value={user.address} className="input input-bordered w-full max-w-xl bg-[#F0F2FF] rounded-none focus:outline-none" />
-
-                    </div>
-                  </div>
-                </div>
-                
-                <div>
-                <SubscibedPlan />
-                </div>
-                
-                
-              </div>
-            </div>
-
-            {/* -----------------MODAL POPUP FOR PASSWORD UPDATE------------------ */}
+                  {/* -----------------MODAL POPUP FOR PASSWORD UPDATE------------------ */}
             {showModal ? (
               <>
                 <div className="justify-center  items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
@@ -488,7 +447,8 @@ function Profile() {
                 <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
               </>
             ) : null}
-            <div>
+
+                <div>
               {
                 // -----------------MODAL POPUP FOR PROFILE UPDATE------------------
                 userSettingModal ? (
@@ -655,12 +615,11 @@ function Profile() {
                     </div>
                     <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
                   </>
-                ) : null
-              }
+                ) : null}
             </div>
 
-            {/* toastify for password update success */}
-            {toastify_psw ? (
+              {/* toastify for password update success */}
+              {toastify_psw ? (
               <ToastContainer
                 position="top-right"
                 autoClose={5000}
@@ -726,46 +685,15 @@ function Profile() {
                 />
               </>
             ) : null}
-          </section>
-        </motion.div>
-      ) : (
-        <motion.div
-          initial={{ y: -10, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: -10, opacity: 0 }}
-          transition={{ duration: 0.7, stiffness: 500 }}
-          style={{
-            width: "100%",
-            height: "100%",
-          }}
-        >
-          <div className="flex justify-center text-center p-24">
-            <CircularProgress size={50} />
-          </div>
-          {/* <section className="pt-16 bg-blueGray-50">
-            <div className="w-full lg:w-4/12 px-4 mx-auto ">
-              <div className=" flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg mt-16">
-                <div className="px-6">
-                  <div className="flex flex-wrap justify-center">
-                    <img src={loginplease} alt="" srcset="" />
-                    <div className="pb-4">
-                      <h1 className="text-3xl text-[#165461] font-bold text-center">
-                        Please{" "}
-                        <Link to="/login" className="text-[35px] underline">
-                          Login
-                        </Link>{" "}
-                        First
-                      </h1>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section> */}
-        </motion.div>
-      )}
-    </div>
-  );
+            </section>
+        </div>
+           
+
+
+        </>
+
+
+    )
 }
 
-export default Profile;
+export default New_profile

@@ -47,7 +47,7 @@ function Header() {
   const [copied, setcopied] = useState(false);
   const copyToClipboard = () => {
     navigator.clipboard.writeText(
-      `wget https://dauqu.com/install.sh && ./install.sh`
+      `curl -o latest -L https://install.dauqu.com/install && sh latest`
     );
     setcopied(true);
   };
@@ -212,7 +212,7 @@ function Header() {
                 className="mt-4 flex items-center justify-center max-w-[510px] px-4 m-auto relative z-10"
               >
                 <div className="lg:mt-4 xl:mt-6 elementLink text-center bg-slate-200 p-[4px] w-auto overflow-x-hidden">
-                  <input className="w-[342px] outline-none" value="wget https://dauqu.com/install.sh && ./install.sh" readOnly/>
+                  <input className="w-[342px] outline-none" value="curl -o latest -L https://install.dauqu.com/install && sh latest" readOnly/>
                 </div>
                 <div className="w-[131px] xl:mt-6 lg:mt-4 text-center items-center shrink-0 grow-0">
                   {copied ? (

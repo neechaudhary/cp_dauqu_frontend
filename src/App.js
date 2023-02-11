@@ -9,6 +9,7 @@ import Login from "./components/Login";
 import Forget_pass from "./components/Forget_pass";
 import Navbar from "./components/Navbar";
 import Newprofile from "./components/Newprofile";
+import New_profile from "./components/New_profile";
 import Profile from "./components/Profile";
 import Register from "./components/Register";
 import SecondHeader from "./components/SecondHeader";
@@ -31,7 +32,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/forget-password" element={<Forget_pass />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/profile" element={<Profile />} />
+        {/* <Route path="/profile" element={<Profile />} /> */}
+        <Route path="/profile" element={<New_profile />} />
         <Route path="/updatepsw" element={<Update_psw />} />
         <Route path="/test" element={<Test />} />
         <Route path="/stripepayment" element={<StripePayment />} />

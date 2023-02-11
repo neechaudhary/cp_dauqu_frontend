@@ -103,8 +103,8 @@ function SubscibedPlan() {
         </>
       ) : (
         <>
-          <div className="p-4 mt-4">
-            <div className="card w-full bg-base-100 shadow-xl">
+          <div className=" py-3 mt-4">
+            <div className="card static w-full bg-base-100 border border-[#5CA2D6]  rounded">
               <div className="card-body">
                 <h2 className="card-title">Not Subscribed yet ?</h2>
 

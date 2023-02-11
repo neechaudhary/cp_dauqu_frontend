@@ -322,7 +322,7 @@ function Body() {
             Easily Integrate with your favorite Services
           </div>
           <div className="flex flex-col md:flex-row sm:p-0 md:p-8 items-center   m-auto  justify-evenly">
-            <div className="card rounded-none flex bg-[#FFFFFF] p-4 md:m-2  md:mt:0 mt-4 md:w-96 w-full  h-[25vh]   my-5 md:my-0">
+            <div className="card rounded-none flex bg-[#FFFFFF] p-4 md:m-2  md:mt:0 mt-4 md:w-96 w-full  min-h-60vh   my-5 md:my-0">
               <div className="pb-4  m-auto  ">
                 {/* <AiFillBulb
                   style={{
@@ -341,7 +341,7 @@ function Body() {
                 </div>
                 <div className="text-[#808080] text-center">
                 {/* Our use-case driven deployment options shorten time to value, allowing your business to concentrate on what matters most—detection, investigation, and threat response. */}
-                Push to Github and voilà - Easypanel will get your code, build it and deploy it.
+                Enter the name of project and the generated Deployment URL in the “GIT URL” field with port number and click on “Deploy” button.
                 </div>
                 {/* <div className="mt-4 text-center">
                   <button
@@ -353,7 +353,7 @@ function Body() {
                 </div> */}
               </div>
             </div>
-            <div className="card h-[25vh] rounded-none flex bg-[#FFFFFF] p-4 md:m-2  md:mt:0 mt-4 md:w-96 w-full   my-5 md:my-0">
+            <div className="card  rounded-none flex bg-[#FFFFFF] p-4 md:m-2  md:mt:0 mt-4 md:w-96 w-full min-h-60vh   my-5 md:my-0">
               <div className=" pb-4 m-auto  ">
                 {/* <GrUserExpert
                   style={{
@@ -367,13 +367,13 @@ function Body() {
                 <img src={free_ssl} alt="free ssl certificates" />
               </div>
               <div className="ml-4">
-                <div className="text-[#5C5C5C] text-center text-[20px] font-bold">
+                <div className="text-[#5C5C5C] text-center text-[20px] text-center pb-2 font-bold">
                   {/* Experts validation */}
                   Free SSL Certificates
                 </div>
                 <div className="text-[#808080] text-center">
                 {/* In order to create a solution that satisfies your business objectives, our team of professionals works together with you to assess your goals, plan your deployment, and implement your solution. */}
-                With a simple checkbox you get auto-renewable Let's Encrypt certificates.
+                Get auto-renewable SSL certificates that enables websites to move from HTTP to HTTPS, which is more secure.Let's Encrypt certificates.
                 </div>
                 {/* <div className="mt-4 text-center">
                   <button
@@ -385,7 +385,7 @@ function Body() {
                 </div> */}
               </div>
             </div>
-            <div className="card rounded-none h-[25vh] flex bg-[#FFFFFF] p-4 md:m-2  md:mt:0 mt-4 md:w-96 w-full   my-5 md:my-0">
+            <div className="card rounded-none  flex bg-[#FFFFFF] p-4 md:m-2  md:mt:0 mt-4 md:w-96 w-full  min-h-60vh my-5 md:my-0">
               <div className="pb-4 m-auto  ">
                 {/* <FaEdit
                   style={{
@@ -399,13 +399,13 @@ function Body() {
                 <img src={one_click_app} alt="one click app" />
               </div>
               <div className="ml-4">
-                <div className="text-[#5C5C5C] text-center text-[20px] font-bold">
+                <div className="text-[#5C5C5C] text-center text-[20px] text-center pb-2 font-bold">
                 {/* Flexible Plan */}
                 One-Click Apps
                 </div>
                 <div className="text-[#808080] text-center">
                 {/* The spark plan helps you start free for 5 days to explore and test your applications, and is chargable on a usage basis after that. You can check out our plans. */}
-                Create a Wordpress website in less than 60 seconds. How does it sound?
+                Find an app that works for you, then launch it in no more than two minutes. Many one-Click Apps accessible like WordPress, LAMP etc.
                 </div>
                 {/* <div className="mt-4 text-center">
                   <button
@@ -419,7 +419,7 @@ function Body() {
             </div>
           </div>
           <div className="flex flex-col md:flex-row md:p-8 sm:p-0 items-center   m-auto  justify-evenly">
-            <div className="card h-[25vh] rounded-none flex bg-[#FFFFFF] p-4 md:m-2  md:mt:0 mt-4 md:w-96 w-full   my-5 md:my-0">
+            <div className="card  rounded-none flex bg-[#FFFFFF] p-4 md:m-2  md:mt:0 mt-4 md:w-96 w-full min-h-60vh  my-5 md:my-0">
               <div className="pb-4 m-auto  ">
                 {/* <FaDatabase
                   style={{
@@ -432,13 +432,13 @@ function Body() {
                 <img src={zero_downtime} alt="zero downtime deployments" />
               </div>
               <div className="ml-4">
-                <div className="text-[#5C5C5C] text-center text-[20px] font-bold">
+                <div className="text-[#5C5C5C] text-center text-[20px] text-center pb-2 font-bold">
                   {/* Serverless Solutions */}
                   Zero Downtime Deployments
                 </div>
                 <div className="text-[#808080] text-center">
                 {/* We are following the latest trend in this cloud-arena. Since this is a fully managed platform, deployment and post-deployment issues are not a concern. */}
-                You can deploy seamlessly without any interruptions for your users.
+                Dauqu will do it in such a way that the you will not aware of any downtime taking place while you deploy the new version of the application.
                 </div>
                 {/* <div className="mt-4 text-center">
                   <button
@@ -450,7 +450,7 @@ function Body() {
                 </div> */}
               </div>
             </div>
-            <div className="card rounded-none h-[25vh] flex bg-[#FFFFFF] p-4 md:m-2  md:mt:0 mt-4 md:w-96 w-full   my-5 md:my-0">
+            <div className="card rounded-none  flex bg-[#FFFFFF] p-4 md:m-2  md:mt:0 mt-4 md:w-96 w-full min-h-60vh  my-5 md:my-0">
               <div className="pb-4 m-auto ">
                 {/* <BiLink
                   style={{
@@ -463,13 +463,13 @@ function Body() {
                 <img src={in_browser} alt="In-Browser terminal" />
               </div>
               <div className="ml-4">
-                <div className="text-[#5C5C5C] text-center  text-[20px] font-bold">
+                <div className="text-[#5C5C5C] text-center  text-[20px] text-center pb-2 font-bold">
                   {/* Stronger security */}
                   In-Browser Terminal
                 </div>
                 <div className="text-[#808080] text-center ">
                 {/* One of the final stages in delivering secure software is ensuring the security and integrity of developed applications are not compromised during deployment */}
-                Check logs or run sell commands without leaving your browser.
+                Dauqu’s browser-based terminal renders a fully functional console that a user can launch with a single click.
                 </div>
                 {/* <div className="mt-4 text-center ">
                   <button
@@ -481,7 +481,7 @@ function Body() {
                 </div> */}
               </div>
             </div>
-            <div className="card h-[25vh] rounded-none flex bg-[#FFFFFF] p-4 md:m-2  md:mt:0 mt-4 md:w-96 w-full   my-5 md:my-0">
+            <div className="card  rounded-none flex bg-[#FFFFFF] p-4 md:m-2  md:mt:0 mt-4 md:w-96 w-full min-h-60vh  my-5 md:my-0">
               <div className="pb-4 m-auto">
                 {/* <BsFillFileEarmarkCodeFill
                   style={{
@@ -494,13 +494,13 @@ function Body() {
                 <img src={dockerfile_not_required} alt="dockerfile not required" />
               </div>
               <div className="ml-4">
-                <div className="text-[#5C5C5C] text-center  text-[20px] font-bold">
+                <div className="text-[#5C5C5C] text-center  text-[20px] text-center pb-2 font-bold">
                 {/* vast language support */}
                 Dockerfile not required
                 </div>
                 <div className="text-[#808080] text-center ">
                 {/* You can deploy applications built with Java, Python, Node.js, Go, and many more. This makes Dauqu different from other platforms.You can also deploy container images and static sites */}
-                Transform your code into Docker images with the magic of Cloud Native Buildpacks.
+                With Docker, it is easy to package your code into an image that we can run anywhere, anytime.
                 </div>
                 {/* <div className="mt-4 text-center ">
                   <button
