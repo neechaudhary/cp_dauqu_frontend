@@ -8,6 +8,11 @@ import {VscAccount} from "react-icons/vsc"
 import {FiSettings} from "react-icons/fi"
 import {RiLockPasswordLine} from "react-icons/ri"
 import {MdOutlineLogout} from "react-icons/md"
+import {AiOutlineDollarCircle} from "react-icons/ai"
+import Loadingimg from "../assets/images/loading.gif"
+import { Link } from "react-router-dom";
+
+
 
 import { API } from "./Constant";
 
@@ -17,6 +22,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 const New_profile = () => {
     const [showModal, setShowModal] = useState(false); // modal for password update
+    const [showPlans, SetShowPlans] = useState(false);
     const [userSettingModal, setUserSettingModal] = useState(false); // modal for user Account setting
     const [toastify_psw, setToastify_psw] = useState(false); // toastify for password update success
     const [toastify_psw_err, setToastify_psw_err] = useState(false); // toastify for password update error
@@ -33,6 +39,8 @@ const New_profile = () => {
     const [phone, setPhone] = useState("");
     const [address, setAddress] = useState("");
     const [country, setCountry] = useState("");
+    const [isLoading, setIsLoading] = useState(false)
+
   
     // for success toastify password update
     const notify_psw = () => {
@@ -160,6 +168,7 @@ const New_profile = () => {
     // code to get user by id
     const getUserById = async () => {
       if (user._id === undefined) return;
+     
       await axios
         .get(`${API}/getuser/${user._id}`)
         .then((res) => {
@@ -176,9 +185,11 @@ const New_profile = () => {
           setTimeout(() => {
             console.log(err);
           }, [5000]);
+         
         });
     };
     useEffect(() => {
+     
       getUserById();
     }, [user._id]);
   
@@ -216,7 +227,7 @@ const New_profile = () => {
         <div>
             <SecondHeader />
 
-            
+         
              <section className='pt-16'>
                 <div className='lg:w-full lg:min-h-[100vh] sm:flex' >
                     <div className='bg-[#f0f0f0]'>
@@ -234,16 +245,22 @@ const New_profile = () => {
 
                         <div className='pt-3'>
                             <ul className="menu bg-base-100 lg:w-full rounded-none flex flex-row justify-evenly sm:block">
-                                <li onClick={() =>setUserSettingModal(!userSettingModal)}>
+                                <li className='active:bg-red-300' onClick={() =>setUserSettingModal(!userSettingModal)}>
                                     <a>
                                         <VscAccount size={18} />
                                         Account
                                     </a>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <a>
                                         <FiSettings size={18}/>
                                         Setting
+                                    </a>
+                                </li> */}
+                                 <li onClick={()=> SetShowPlans(!showPlans)}>
+                                    <a>
+                                        <AiOutlineDollarCircle size={18}/>
+                                        Plans
                                     </a>
                                 </li>
                                 <li onClick={() => setShowModal(!showModal)}>
@@ -336,7 +353,7 @@ const New_profile = () => {
                         </div>
 
                         <div>
-                            <SubscibedPlan />
+                            {/* <SubscibedPlan /> */}
                         </div>
 
 
@@ -618,6 +635,65 @@ const New_profile = () => {
                 ) : null}
             </div>
 
+                    {/* -----------------MODAL POPUP FOR PASSWORD UPDATE------------------ */}
+                    {showPlans ? (
+              <>
+                <div className="justify-center  items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+                  <div className="relative w-auto md:my-6 my-24 md:mt-0 mt-[350px] md:p-0 p-4 mx-auto max-w-3xl">
+                    {/*content*/}
+                    <div className="border-0 mt-[150px] rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                      {/*header*/}
+                      <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
+                        <h3 className="text-3xl font-semibold">
+                          Your active plan
+                        </h3>
+
+                        <button
+                          className="btn btn-circle btn-sm btn-outline  hover:bg-[#05232A] p-1 ml-auto     text-black  float-right text-2xl leading-none font-semibold outline-none focus:outline-none"
+                          onClick={() => SetShowPlans(false)}
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M6 18L18 6M6 6l12 12"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                      {/*body*/}
+                    <SubscibedPlan />
+                      {/*footer*/}
+                      <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
+                        <button
+                          className="text-red-600  border hover:border hover:border-rose-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                          type="button"
+                          onClick={() => SetShowPlans(false)}
+                        >
+                          Close
+                        </button>
+                        <Link to="/">
+                        <button 
+                          className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                          type="button">
+                          Change plan
+                        </button>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+              </>
+            ) : null}
+
               {/* toastify for password update success */}
               {toastify_psw ? (
               <ToastContainer
@@ -685,7 +761,8 @@ const New_profile = () => {
                 />
               </>
             ) : null}
-            </section>
+            </section> 
+            
         </div>
            
 

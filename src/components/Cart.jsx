@@ -16,11 +16,14 @@ import ck from "../assets/images/ck.svg";
 import loginplease from "../assets/images/loginPlease.jpg";
 import rpay from "../assets/images/razorpay.svg";
 import { ToastContainer, toast } from "react-toastify";
+import Loadingimg from "../assets/images/loading.gif"
+
 
 import "react-toastify/dist/ReactToastify.css";
 function Cart() {
   const [hiddendiv, setHiddendiv] = useState(false);
   const [paypalPaymentSuccess, setPaypalPaymentSuccess] = useState(false); // for paypal payment success message
+  const [isLoading, setIsLoading] = useState(false);//loading animation
   const notif = () => {
     toast.success("Thankyou 👍 for choosing our plan.", {
       position: "top-right",
@@ -72,14 +75,17 @@ function Cart() {
     await axios
       .get(`${API}/plans/${slug}`)
       .then((res) => {
+        
         setCart(res.data[0]);
         console.log(res.data);
       })
       .catch((err) => {
         console.log(err);
+        setIsLoading(false);
       });
   };
   useEffect(() => {
+    setIsLoading(true);//for loading
     getPlanBySlug(slug);
   }, [slug]);
 
@@ -211,6 +217,7 @@ function Cart() {
         <SecondHeader />
       </div>
       {user.length !== 0 ? (
+        
         <div className="bg-[#fbfbfb] md:p-6 p-4 mt-16">
           <motion.div
             initial={{ y: -10, opacity: 0 }}
@@ -392,7 +399,15 @@ function Cart() {
             height: "100%",
           }}
         >
+      
           <section className="pt-16 bg-blueGray-50">
+          {isLoading ? (
+            <div className="flex items-center justify-center h-[100vh] ">
+             <img src={Loadingimg} alt=""
+             className="h-[20px] w-[20px]" /> 
+            </div>
+        
+      ) :(
             <div className="w-full lg:w-4/12 px-4 mx-auto ">
               <div className=" flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg mt-16">
                 <div className="px-6">
@@ -411,7 +426,9 @@ function Cart() {
                 </div>
               </div>
             </div>
+            )}
           </section>
+      
         </motion.div>
       )}
     </div>

@@ -527,7 +527,7 @@ function Body() {
               }}
             />
           </div>
-          <div className="w-[70%] m-auto text-center md:text-[40px] text-[#333333] mt-8 font-bold">
+          <div id="element" className="w-[70%] m-auto text-center md:text-[40px] text-[#333333] mt-8 font-bold">
             Choose our price plan
           </div>
           <div className=""></div>

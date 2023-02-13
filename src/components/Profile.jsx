@@ -14,6 +14,9 @@ import "react-toastify/dist/ReactToastify.css";
 import SubscibedPlan from "./SubscibedPlan";
 import CircularProgress from "@mui/material/CircularProgress";
 
+import Loadingimg from "../assets/images/loading.gif"
+
+
 import {VscAccount} from "react-icons/vsc"
 import {SlSettings} from "react-icons/sl"
 import {RiLockPasswordLine} from "react-icons/ri"
@@ -36,6 +39,7 @@ function Profile() {
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
   const [country, setCountry] = useState("");
+ 
 
   // for success toastify password update
   const notify_psw = () => {
@@ -78,6 +82,7 @@ function Profile() {
       theme: "dark",
     });
   };
+  
   // for error toastify user account setting error
   const notify_user_err = () => {
     toast.error("Settings Update Error", {
@@ -113,9 +118,11 @@ function Profile() {
       console.log(response.data.data);
     } catch (error) {
       // console.log(error);
+      
     }
   }
   React.useEffect(() => {
+   
     GetUsers();
   }, []);
   //   logout function
@@ -178,10 +185,12 @@ function Profile() {
       .catch((err) => {
         setTimeout(() => {
           console.log(err);
+        
         }, [5000]);
       });
   };
   useEffect(() => {
+   
     getUserById();
   }, [user._id]);
 
@@ -231,6 +240,7 @@ function Profile() {
             height: "100%",
           }}
         >
+        
           <section className="pt-16    ">
             <div className=" bg-[#ffffff]  md:h-[100vh] h-full   w-full p-4 sm:p-0  m-auto sm:flex   ">
               <div className="border-0 flex flex-col  w-1/1 min-w-[200px]  lg:w-[260px]  ">
@@ -727,6 +737,7 @@ function Profile() {
               </>
             ) : null}
           </section>
+          
         </motion.div>
       ) : (
         <motion.div
