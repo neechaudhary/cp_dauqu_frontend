@@ -18,6 +18,7 @@ import StripePayment from "./components/StripePayment";
 import SubscibedPlan from "./components/SubscibedPlan";
 import Test from "./components/Test";
 import Update_psw from "./components/Update_psw";
+import Pymnt_succss from "./components/Pymnt_succss";
 // allow axios credentials
 
 axios.defaults.withCredentials = true;
@@ -42,6 +43,7 @@ function App() {
         <Route path="/navbar" element={<Navbar />} />
         <Route path="/subs" element={<SubscibedPlan />} />
         <Route path="/ss" element={<SecondHeader />} />
+        <Route path="/payment-success" element={<Pymnt_succss />} />
       </Routes>
     </>
   );

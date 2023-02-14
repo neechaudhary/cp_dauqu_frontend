@@ -3,6 +3,8 @@ import logo from "../logo.svg";
 import "../App.css";
 import axios from "axios";
 import { API } from "./Constant";
+import { Link } from "react-router-dom";
+import Pymnt_succss from "./Pymnt_succss"
 
 function App() {
   function loadScript(src) {

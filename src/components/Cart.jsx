@@ -27,7 +27,7 @@ function Cart() {
   const notif = () => {
     toast.success("Thankyou 👍 for choosing our plan.", {
       position: "top-right",
-      autoClose: 2500,
+      autoClose: 1500,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -85,7 +85,7 @@ function Cart() {
       });
   };
   useEffect(() => {
-    setIsLoading(true);//for loading
+    setIsLoading(true);//forloading
     getPlanBySlug(slug);
   }, [slug]);
 
@@ -118,7 +118,7 @@ function Cart() {
         notif();
         setPaypalPaymentSuccess(true);
         setTimeout(() => {
-          window.location.href = "/profile";
+          window.location.href = "/payment-success";
         }, [3000]);
       })
       .catch((err) => {
@@ -161,7 +161,7 @@ function Cart() {
       },
 
       handler: function (response) {
-        alert(response.razorpay_payment_id);
+        // alert(response.razorpay_payment_id);
         // console.log(response);
         axios
           .post(`${API}/orders`, {
@@ -187,7 +187,7 @@ function Cart() {
             notif();
             setPaypalPaymentSuccess(true);
             setTimeout(() => {
-              window.location.href = "/profile";
+              window.location.href = "/payment-success";
             }, [3000]);
           })
           .catch((err) => {

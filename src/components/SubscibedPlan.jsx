@@ -7,6 +7,9 @@ import { GiCheckMark } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import { API } from "./Constant";
 
+import Loadingimg from "../assets/images/loading.gif"
+
+
 function SubscibedPlan() {
   const [plan, setPlan] = useState([]);
   const [user, setUser] = useState([]);
@@ -14,6 +17,9 @@ function SubscibedPlan() {
   const [fulldetails, setFulldetails] = useState([]);
  
   const [plan_Slug, setPlan_Slug] = useState([]);
+
+  const [isLoading, setIsLoading] = useState(false);//loading animation
+
   // code to get user and its userUniqueKey-----------
   async function GetUsers() {
     try {
@@ -35,12 +41,14 @@ function SubscibedPlan() {
   // code to get order details by uniqueKey-----------
   async function getplan(uniqueKey) {
     try {
+      setIsLoading(true)
       const resp = await axios.get(`${API}/orders/userUniqueKey/${uniqueKey}`);
       setPlan(resp.data);
       setFulldetails(resp.data[0]);
       getplandetailsbyslug(resp.data[0].product_slug);
       console.log(resp.data[0]);
     } catch (error) {
+      setIsLoading(false)
       console.log(error);
     }
   }
@@ -55,8 +63,7 @@ function SubscibedPlan() {
       console.log(error);
     }
   }
-
-
+  
   return (
     <>
       {plan.length > 0 ? (
@@ -105,9 +112,9 @@ function SubscibedPlan() {
         <>
           <div className=" py-3 mt-4">
             <div className="card static w-full bg-base-100 border border-[#5CA2D6]  rounded">
+         
               <div className="card-body">
                 <h2 className="card-title">Not Subscribed yet ?</h2>
-
                 <p className="text-[18px]">
                   Why you dont have purchase any plan yet! 🤔 . Go and grab the
                   deal 👍 with best price range according to your needs.
@@ -123,6 +130,7 @@ function SubscibedPlan() {
               </div>
             </div>
           </div>
+         
         </>
       )}
     </>
