@@ -27,7 +27,7 @@ import { GoCheck } from "react-icons/go";
 import { RiSecurePaymentFill } from "react-icons/ri";
 import { IoImagesSharp } from "react-icons/io5";
 import { BsFillCloudDownloadFill } from "react-icons/bs";
-import {GrUserExpert} from "react-icons/gr"
+import { GrUserExpert } from "react-icons/gr"
 
 import {
   FaGooglePlay,
@@ -200,11 +200,11 @@ function Body() {
           </div>
           <div className="flex flex-col md:flex-row justify-evenly  flex-wrap items-stretch m-auto pt-8 w-full">
             <div className="bg-[#FFFFFF] p-3 xl:p-6  text-center items-center md:w-1/2 lg:w-1/4 xl:max-w-[300px] md:m-0  m-5 md:my-0 flex flex-col ">
-               <div className="w-full">
+              <div className="w-full">
                 {/* <BiCodeAlt size={30} />  */}
                 <img src={get_code} className=" w-full md:h-[180px] h-[225px] sm:h-[275px]" alt="get code" />
-              </div> 
-              
+              </div>
+
               <div className="text-[20px] font-bold text-[#333333] mt-2">
                 Get Code
               </div>
@@ -233,7 +233,7 @@ function Body() {
                 create a Docker image, which is essentially a lightweight,
                 portable version of the admin panel that can be run on any
                 machine that has Docker installed.
-                 {/* This step allows the panel to
+                {/* This step allows the panel to
                 be easily deployed to a variety of different environments. */}
               </div>
               <div className=" mt-2">
@@ -273,10 +273,10 @@ function Body() {
               <div className="text-[17px] text-justify text-[#888888] mt-2 grow">
                 Connect to domain with proxy: Once the container is running, the
                 final step is to connect it to a domain and proxy.
-                 {/* A domain is aunique name that identifies the admin panel on the internet,
+                {/* A domain is aunique name that identifies the admin panel on the internet,
                 while the proxy is used to route traffic to the container
                 running the panel. */}
-                 This allows the user to access the panel by
+                This allows the user to access the panel by
                 navigating to the domain in their web browser.
               </div>
               <div className=" mt-2">
@@ -340,8 +340,8 @@ function Body() {
                   Push to deploy
                 </div>
                 <div className="text-[#808080] text-center">
-                {/* Our use-case driven deployment options shorten time to value, allowing your business to concentrate on what matters most—detection, investigation, and threat response. */}
-                Enter the name of project and the generated Deployment URL in the “GIT URL” field with port number and click on “Deploy” button.
+                  {/* Our use-case driven deployment options shorten time to value, allowing your business to concentrate on what matters most—detection, investigation, and threat response. */}
+                  Enter the name of project and the generated Deployment URL in the “GIT URL” field with port number and click on “Deploy” button.
                 </div>
                 {/* <div className="mt-4 text-center">
                   <button
@@ -372,8 +372,8 @@ function Body() {
                   Free SSL Certificates
                 </div>
                 <div className="text-[#808080] text-center">
-                {/* In order to create a solution that satisfies your business objectives, our team of professionals works together with you to assess your goals, plan your deployment, and implement your solution. */}
-                Get auto-renewable SSL certificates that enables websites to move from HTTP to HTTPS, which is more secure.Let's Encrypt certificates.
+                  {/* In order to create a solution that satisfies your business objectives, our team of professionals works together with you to assess your goals, plan your deployment, and implement your solution. */}
+                  Get auto-renewable SSL certificates that enables websites to move from HTTP to HTTPS, which is more secure.Let's Encrypt certificates.
                 </div>
                 {/* <div className="mt-4 text-center">
                   <button
@@ -400,12 +400,12 @@ function Body() {
               </div>
               <div className="ml-4">
                 <div className="text-[#5C5C5C] text-center text-[20px] text-center pb-2 font-bold">
-                {/* Flexible Plan */}
-                One-Click Apps
+                  {/* Flexible Plan */}
+                  One-Click Apps
                 </div>
                 <div className="text-[#808080] text-center">
-                {/* The spark plan helps you start free for 5 days to explore and test your applications, and is chargable on a usage basis after that. You can check out our plans. */}
-                Find an app that works for you, then launch it in no more than two minutes. Many one-Click Apps accessible like WordPress, LAMP etc.
+                  {/* The spark plan helps you start free for 5 days to explore and test your applications, and is chargable on a usage basis after that. You can check out our plans. */}
+                  Find an app that works for you, then launch it in no more than two minutes. Many one-Click Apps accessible like WordPress, LAMP etc.
                 </div>
                 {/* <div className="mt-4 text-center">
                   <button
@@ -437,8 +437,8 @@ function Body() {
                   Zero Downtime Deployments
                 </div>
                 <div className="text-[#808080] text-center">
-                {/* We are following the latest trend in this cloud-arena. Since this is a fully managed platform, deployment and post-deployment issues are not a concern. */}
-                Dauqu will do it in such a way that the you will not aware of any downtime taking place while you deploy the new version of the application.
+                  {/* We are following the latest trend in this cloud-arena. Since this is a fully managed platform, deployment and post-deployment issues are not a concern. */}
+                  Dauqu will do it in such a way that the you will not aware of any downtime taking place while you deploy the new version of the application.
                 </div>
                 {/* <div className="mt-4 text-center">
                   <button
@@ -468,8 +468,8 @@ function Body() {
                   In-Browser Terminal
                 </div>
                 <div className="text-[#808080] text-center ">
-                {/* One of the final stages in delivering secure software is ensuring the security and integrity of developed applications are not compromised during deployment */}
-                Dauqu’s browser-based terminal renders a fully functional console that a user can launch with a single click.
+                  {/* One of the final stages in delivering secure software is ensuring the security and integrity of developed applications are not compromised during deployment */}
+                  Dauqu’s browser-based terminal renders a fully functional console that a user can launch with a single click.
                 </div>
                 {/* <div className="mt-4 text-center ">
                   <button
@@ -495,12 +495,12 @@ function Body() {
               </div>
               <div className="ml-4">
                 <div className="text-[#5C5C5C] text-center  text-[20px] text-center pb-2 font-bold">
-                {/* vast language support */}
-                Dockerfile not required
+                  {/* vast language support */}
+                  Dockerfile not required
                 </div>
                 <div className="text-[#808080] text-center ">
-                {/* You can deploy applications built with Java, Python, Node.js, Go, and many more. This makes Dauqu different from other platforms.You can also deploy container images and static sites */}
-                With Docker, it is easy to package your code into an image that we can run anywhere, anytime.
+                  {/* You can deploy applications built with Java, Python, Node.js, Go, and many more. This makes Dauqu different from other platforms.You can also deploy container images and static sites */}
+                  With Docker, it is easy to package your code into an image that we can run anywhere, anytime.
                 </div>
                 {/* <div className="mt-4 text-center ">
                   <button
@@ -533,71 +533,242 @@ function Body() {
           <div className=""></div>
           <div className="flex flex-col md:flex-row  items-center   m-auto justify-center">
             {/* map funtion */}
-            {plans.map((plan, key) => (
-              <>
-                <div className="cardd m-4  border w-[310px] mt-8 p-6 bg-[#FFFFFF] text-center  hover:scale-110 hover:transition-all hover:border-[#165461]  ">
-                  <div className="text-[#22616C] font-semibold mt-4">
-                    {plan.plan_name}
+            {/* {plans.map((plan, key) => ( */}
+            <>
+              <div className="cardd m-4  border w-[310px] mt-8 p-6 bg-[#FFFFFF] text-center  hover:scale-110 hover:transition-all hover:border-[#165461]  ">
+                <div className="text-[#22616C] font-semibold mt-4">
+                  {/* {plan.plan_name} */}
+                  Basic
+                </div>
+                <div>
+                  <span className="text[#222222] font-bold text-[40px] mt-4 ">
+                    {/* ${plan.plan_price} */}
+                    $11
+                  </span>
+                  {/* /{plan.billing_cycle} */}
+                  Monthly
+                </div>
+                <div className="mt-2 text-[15px] font-semibold">
+                  {/* {plan.plan_title} */}
+                  Useful
+                </div>
+                <hr className="mt-4" />
+                <div className="mt-4">
+                  <Link to={`/cart/QFRAH`}>
+                  <button
+                    className="p-2 font-semibold text-[#26606B] hover:bg-[#165461] hover:text-white "
+                    style={{ border: "1px solid #215E6A" }}
+                  >
+                    Buy Package
+                  </button>
+                  </Link>
+                </div>
+                <hr className="mt-4" />
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
                   </div>
-                  <div>
-                    <span className="text[#222222] font-bold text-[40px] mt-4 ">
-                      ${plan.plan_price}
-                    </span>
-                    /{plan.billing_cycle}
+                  <div className="ml-2">
+                    {/* {plan.plan_info_one} */}
+                    Deploy Unlimited websites
                   </div>
-                  <div className="mt-2 text-[15px] font-semibold">
-                    {plan.plan_title}
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
                   </div>
-                  <hr className="mt-4" />
-                  <div className="mt-4">
-                    <Link to={`/cart/${plan.plan_slug}`}>
-                      <button
-                        className="p-2 font-semibold text-[#26606B] hover:bg-[#165461] hover:text-white "
-                        style={{ border: "1px solid #215E6A" }}
-                      >
-                        Buy Package
-                      </button>
-                    </Link>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_two} */}
+                    Unlimited database account
                   </div>
-                  <hr className="mt-4" />
-                  <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
-                    <div className="">
-                      <GoCheck />
-                    </div>
-                    <div className="ml-2">{plan.plan_info_one}</div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
                   </div>
-                  <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
-                    <div className="">
-                      <GoCheck />
-                    </div>
-                    <div className="ml-2">{plan.plan_info_two}</div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_three} */}
+                    Free SSL Support
                   </div>
-                  <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
-                    <div className="">
-                      <GoCheck />
-                    </div>
-                    <div className="ml-2">{plan.plan_info_three}</div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
                   </div>
-                  <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
-                    <div className="">
-                      <GoCheck />
-                    </div>
-                    <div className="ml-2">{plan.plan_info_four}</div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_four} */}
+                    Support Multiple Languages
                   </div>
-                  {/* <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                </div>
+                {/* <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
                 <div className="">
                   <GoCheck />
                 </div>
                 <div className="ml-2">10 Photo Assets</div>
               </div> */}
-                  <hr className="mt-4" />
-                  <div className=" mt-4 text-left">Dauqu</div>
-                  {/* <div className="mt-2 text-left">
+                <hr className="mt-4" />
+                <div className=" mt-4 text-left">Dauqu</div>
+                {/* <div className="mt-2 text-left">
                     {plan.plan_transaction_fee}% transaction fee
                   </div> */}
+              </div>
+
+              <div className="cardd m-4  border w-[310px] mt-8 p-6 bg-[#FFFFFF] text-center  hover:scale-110 hover:transition-all hover:border-[#165461]  ">
+                <div className="text-[#22616C] font-semibold mt-4">
+                  {/* {plan.plan_name} */}
+                  Popular
                 </div>
-              </>
-            ))}
+                <div>
+                  <span className="text[#222222] font-bold text-[40px] mt-4 ">
+                    {/* ${plan.plan_price} */}
+                    $29
+                  </span>
+                  {/* /{plan.billing_cycle} */}
+                  Quarterly
+                </div>
+                <div className="mt-2 text-[15px] font-semibold">
+                  {/* {plan.plan_title} */}
+                  Benefial
+                </div>
+                <hr className="mt-4" />
+                <div className="mt-4">
+                  <Link to={`/cart/KNRBI`}>
+                  <button
+                    className="p-2 font-semibold text-[#26606B] hover:bg-[#165461] hover:text-white "
+                    style={{ border: "1px solid #215E6A" }}
+                  >
+                    Buy Package
+                  </button>
+                  </Link>
+                </div>
+                <hr className="mt-4" />
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_one} */}
+                    Deploy Unlimited websites
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_two} */}
+                    Unlimited database account
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_three} */}
+                    Free SSL Support
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_four} */}
+                    Support Multiple Languages
+                  </div>
+                </div>
+                {/* <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                <div className="">
+                  <GoCheck />
+                </div>
+                <div className="ml-2">10 Photo Assets</div>
+              </div> */}
+                <hr className="mt-4" />
+                <div className=" mt-4 text-left">Dauqu</div>
+                {/* <div className="mt-2 text-left">
+                    {plan.plan_transaction_fee}% transaction fee
+                  </div> */}
+              </div>
+              <div className="cardd m-4  border w-[310px] mt-8 p-6 bg-[#FFFFFF] text-center  hover:scale-110 hover:transition-all hover:border-[#165461]  ">
+                <div className="text-[#22616C] font-semibold mt-4">
+                  {/* {plan.plan_name} */}
+                  Premium
+                </div>
+                <div>
+                  <span className="text[#222222] font-bold text-[40px] mt-4 ">
+                    {/* ${plan.plan_price} */}
+                    $115
+                  </span>
+                  {/* /{plan.billing_cycle} */}
+                  Yearly
+                </div>
+                <div className="mt-2 text-[15px] font-semibold">
+                  {/* {plan.plan_title} */}
+                  Advanced
+                </div>
+                <hr className="mt-4" />
+                <div className="mt-4">
+                  <Link to={`/cart/FS8EC`}>
+                  <button
+                    className="p-2 font-semibold text-[#26606B] hover:bg-[#165461] hover:text-white "
+                    style={{ border: "1px solid #215E6A" }}
+                  >
+                    Buy Package
+                  </button>
+                  </Link>
+                </div>
+                <hr className="mt-4" />
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_one} */}
+                    Deploy Unlimited websites
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_two} */}
+                    Unlimited database account
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_three} */}
+                    Free SSL Support
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_four} */}
+                    Support Multiple Languages
+                  </div>
+                </div>
+                {/* <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                <div className="">
+                  <GoCheck />
+                </div>
+                <div className="ml-2">10 Photo Assets</div>
+              </div> */}
+                <hr className="mt-4" />
+                <div className=" mt-4 text-left">Dauqu</div>
+                {/* <div className="mt-2 text-left">
+                    {plan.plan_transaction_fee}% transaction fee
+                  </div> */}
+              </div>
+            </>
+            {/* ))} */}
 
             {/* <div className="cardd m-4  border w-[310px] mt-8 p-6 bg-[#FFFFFF] text-center  hover:scale-110 hover:transition-all hover:border-[#165461]  ">
               <div className="text-[#22616C] font-semibold mt-4">Standard</div>
