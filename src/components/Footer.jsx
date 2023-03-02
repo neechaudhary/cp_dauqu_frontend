@@ -53,8 +53,7 @@ function Footer() {
               Dauqu
             </div>
             <div className="text-[#3A3A3A] ">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-              rerum
+            Dauqu is a cloud based platform that allows you to deploy your app in minutes. 
             </div>
           </div>
           <div className="mt-10 text-[#3A3A3A]">Copyright 2022 by Dauqu</div>
