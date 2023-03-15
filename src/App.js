@@ -19,6 +19,10 @@ import SubscibedPlan from "./components/SubscibedPlan";
 import Test from "./components/Test";
 import Update_psw from "./components/Update_psw";
 import Pymnt_succss from "./components/Pymnt_succss";
+import Brand_new_profile from "./components/Brand_new_profile";
+import Demo_onclick_active from "./components/Demo_onclick_active";
+import Profile_information from "./components/Profile_information";
+import Github_information from "./components/Github_information";
 // allow axios credentials
 
 axios.defaults.withCredentials = true;
@@ -34,7 +38,8 @@ function App() {
         <Route path="/forget-password" element={<Forget_pass />} />
         <Route path="/register" element={<Register />} />
         {/* <Route path="/profile" element={<Profile />} /> */}
-        <Route path="/profile" element={<New_profile />} />
+        {/* <Route path="/profile" element={<New_profile />} /> */}
+        <Route path="/profile" element={<Brand_new_profile />}/>{/*this is currently working profile*/}
         <Route path="/updatepsw" element={<Update_psw />} />
         <Route path="/test" element={<Test />} />
         <Route path="/stripepayment" element={<StripePayment />} />
@@ -44,6 +49,10 @@ function App() {
         <Route path="/subs" element={<SubscibedPlan />} />
         <Route path="/ss" element={<SecondHeader />} />
         <Route path="/payment-success" element={<Pymnt_succss />} />
+        <Route path="/demo-onclick-active-unactive" element={<Demo_onclick_active/>}/> {/*this page is not working*/}
+        <Route path="/personal-details" element={<Profile_information/>} /> {/*this page is inside profile main page */}
+        <Route path="/github-details" element={<Github_information/>} /> {/*this page is inside profile main page */}
+
       </Routes>
     </>
   );

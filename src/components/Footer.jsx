@@ -29,7 +29,7 @@ function Footer() {
             <input
               type="email"
               placeholder="Email address"
-              className="inputt rounded w-full" 
+              className="inputt rounded w-full"
             />
           </div>
           <div className="">
@@ -46,14 +46,14 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="bg-[rgb(255,255,255)] flex flex-col text-center md:flex-row  md:items-center   m-auto xl:p-8  my-6    justify-evenly ">
+      <div className="bg-[rgb(255,255,255)] flex flex-col text-center md:flex-row  md:items-start  m-auto xl:p-8  my-6    justify-evenly ">
         <div className="md:w-[20%] text-left my-5 md:my-0">
           <div className="">
             <div className="text-[45px] text-[#124957] font-semibold">
               Dauqu
             </div>
             <div className="text-[#3A3A3A] ">
-            Dauqu is a cloud based platform that allows you to deploy your app in minutes. 
+              Dauqu is a cloud based platform that allows you to deploy your app in minutes.
             </div>
           </div>
           <div className="mt-10 text-[#3A3A3A]">Copyright 2022 by Dauqu</div>
@@ -103,7 +103,8 @@ function Footer() {
           </div>
           <div className="">
             <div className="text-[#3A3A3A]  cursor-pointer  mt-2">
-              <b>Address: &nbsp;</b> N.S.P (New Delhi)
+              <b>Address: &nbsp;</b><br /> 809, 8th Floor, Pearls Best Heights 1,<br />
+              NSP, Pitampura, New Delhi-110034
             </div>
             <div className="text-[#3A3A3A]  cursor-pointer mt-2">
               <b>Email: &nbsp;</b>info@dauqu.com

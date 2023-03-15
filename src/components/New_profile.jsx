@@ -358,6 +358,7 @@ const New_profile = () => {
 
 
             </div>
+            {/* =============profile information end============ */}
 
           </div>
 
